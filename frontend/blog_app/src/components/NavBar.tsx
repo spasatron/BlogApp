@@ -9,7 +9,7 @@ function NavBar() {
       <div className="top-0 sticky w-full bg-secondary flex-none z-10">
         <div className="max-w-4xl relative flex items-center mx-auto">
           <div className="lg:px-8 lg:mx-0 mx-4 flex w-full">
-            <div className="text-3xl">Logo</div>
+            <div className="text-3xl">Zest</div>
             {/* Navigation for Large Screens*/}
             <div className="ml-auto lg:flex justify-between space-x-8 hidden items-center">
               <Link to={"/"}>
@@ -20,6 +20,9 @@ function NavBar() {
               </Link>
               <Link to={"/post"}>
                 <p>Post</p>
+              </Link>
+              <Link to={"/login"}>
+                <p>Login</p>
               </Link>
             </div>
             <div className="ml-auto lg:hidden flex justify-between space-x-8 items-center">

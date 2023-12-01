@@ -6,11 +6,12 @@ import {
   RichUtils,
   ContentState,
   Modifier,
-  DraftHandleValue,
 } from "draft-js";
 import "draft-js/dist/Draft.css";
+import { useUser } from "../contexts/UserContext";
 
 function PostEditor() {
+  const { token } = useUser();
   const [editorState, setEditorState] = useState(() => {
     // Create a ContentState with 5 blank lines
     const initialContentState = ContentState.createFromText("\n\n\n\n\n");
@@ -61,6 +62,28 @@ function PostEditor() {
   };
 
   const currentStyle = editorState.getCurrentInlineStyle();
+
+  const handlePostSubmit = async () => {
+    console.log("Trying to Submit a Post");
+    const postData = {
+      title: "My First Post",
+      content: convertToRaw(editorState.getCurrentContent()),
+    };
+
+    console.log(JSON.stringify(postData));
+    const result = await fetch(
+      "http://localhost:8000/api/v1/blog/create-post",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+          // Add any other headers as needed
+        },
+        body: JSON.stringify(postData),
+      }
+    );
+  };
 
   return (
     <div className="bg-secondary opacity-75 flex flex-col justify-center items-center my-10 py-20">
@@ -127,7 +150,7 @@ function PostEditor() {
           >
             <path
               fill="white"
-              d="M280-600v-80h560v80H280Zm0 160v-80h560v80H280Zm0 160v-80h560v80H280ZM160-600q-17 0-28.5-11.5T120-640q0-17 11.5-28.5T160-680q17 0 28.5 11.5T200-640q0 17-11.5 28.5T160-600Zm0 160q-17 0-28.5-11.5T120-480q0-17 11.5-28.5T160-520q17 0 28.5 11.5T200-480q0 17-11.5 28.5T160-440Zm0 160q-17 0-28.5-11.5T120-320q0-17 11.5-28.5T160-360q17 0 28.5 11.5T200-320q0 17-11.5 28.5T160-280Z"
+              d="M360-200v-80h480v80H360Zm0-240v-80h480v80H360Zm0-240v-80h480v80H360ZM200-160q-33 0-56.5-23.5T120-240q0-33 23.5-56.5T200-320q33 0 56.5 23.5T280-240q0 33-23.5 56.5T200-160Zm0-240q-33 0-56.5-23.5T120-480q0-33 23.5-56.5T200-560q33 0 56.5 23.5T280-480q0 33-23.5 56.5T200-400Zm0-240q-33 0-56.5-23.5T120-720q0-33 23.5-56.5T200-800q33 0 56.5 23.5T280-720q0 33-23.5 56.5T200-640Z"
             />
           </svg>
         </label>
@@ -163,6 +186,7 @@ function PostEditor() {
           onTab={handleTab}
         />
       </div>
+      <button onClick={handlePostSubmit}>Submit Post to Database</button>
     </div>
   );
 }
