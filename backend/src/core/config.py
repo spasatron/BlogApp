@@ -14,6 +14,7 @@ class Settings(BaseSettings):
     access_token_expires_minutes: int = 15
     SECRET_KEY: str
     DATABASE_URL: str
+    TLS_CERT_KEY: str
     class Config:
         env_file = "development.env" if env_config.ENVIRONMENT == "DEVELOPMENT" else "production.env"
         env_file_encoding = 'utf-8'

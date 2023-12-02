@@ -8,7 +8,7 @@ def connect_to_mongo_client(settings: Settings) -> AsyncIOMotorDatabase:
 
     ssl_config = {
         "tls": True,
-        "tlsCertificateKeyFile": "X509-cert-8654693163229384623.pem"
+        "tlsCertificateKeyFile": settings.TLS_CERT_KEY
     }
 
     client = AsyncIOMotorClient(settings.DATABASE_URL, **ssl_config)
