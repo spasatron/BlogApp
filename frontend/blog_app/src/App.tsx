@@ -17,10 +17,9 @@ function App() {
             <Route
               path="/"
               element={
-                <div>
-                  <h1>Home</h1>
+                <>
                   <HackyListPost />
-                </div>
+                </>
               }
             ></Route>
             <Route
@@ -30,12 +29,9 @@ function App() {
             <Route
               path="/post"
               element={
-                <div>
-                  <p>Create a new Post!</p>
-                  <div>
-                    <PostEditor />
-                  </div>
-                </div>
+                <>
+                  <PostEditor />
+                </>
               }
             ></Route>
             <Route path="/login" element={<HackyLogin />} />

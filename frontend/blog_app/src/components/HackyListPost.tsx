@@ -48,7 +48,7 @@ function HackyListPost() {
   };
 
   return (
-    <div className="bg-secondary opacity-75 flex flex-col justify-center items-center my-10 py-20 space-y-10">
+    <div className="bg-secondary opacity-75 flex flex-col justify-center items-center py-20 space-y-10 h-screen">
       {renderEditors()}
     </div>
   );

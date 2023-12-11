@@ -1,19 +1,20 @@
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
-  content: [
-    "./src/**/*.{js,jsx,ts,tsx}",
-  ],
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
+    fontFamily: {
+      logo: ["Mali"],
+    },
     extend: {
       colors: {
-        primary: '#3D5EC2',
-        secondary: '#C1CCEB',
-        accent: '#0F46EB',
-        text: '#050810',
-        background: '#E4E9F6',
-      }
+        text: "var(--text)",
+        background: "var(--background)",
+        primary: "var(--primary)",
+        secondary: "var(--secondary)",
+        accent: "var(--accent)",
+      },
     },
   },
   plugins: [],
-}
-
+};
