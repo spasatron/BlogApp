@@ -1,0 +1,88 @@
+[
+    {
+        "title": "Delicious Chocolate Chip Cookies",
+        "content": {
+            "blocks": [
+                {
+                    "key": "1",
+                    "type": "header-one",
+                    "text": "The Ultimate Chocolate Chip Cookies Recipe",
+                    "inlineStyleRanges": [
+                        {
+                            "style": "BOLD",
+                            "offset": 4,
+                            "length": 7
+                        },
+                        {
+                            "style": "ITALIC",
+                            "offset": 24,
+                            "length": 7
+                        }
+                    ],
+                    "entityRanges": [
+                        {
+                            "key": 0,
+                            "offset": 12,
+                            "length": 15
+                        }
+                    ]
+                },
+                {
+                    "key": "2",
+                    "type": "unordered-list-item",
+                    "text": "Ingredients:",
+                    "depth": 0,
+                    "children": [
+                        {
+                            "key": "3",
+                            "type": "unordered-list-item",
+                            "text": "2 1/4 cups all-purpose flour",
+                            "depth": 1
+                        },
+                        {
+                            "key": "4",
+                            "type": "unordered-list-item",
+                            "text": "1/2 teaspoon baking soda",
+                            "depth": 1
+                        },
+                        {
+                            "key": "5",
+                            "type": "unordered-list-item",
+                            "text": "1 cup unsalted butter, room temperature",
+                            "depth": 1
+                        }
+                    ]
+                },
+                {
+                    "key": "6",
+                    "type": "paragraph",
+                    "text": "Instructions:"
+                },
+                {
+                    "key": "7",
+                    "type": "paragraph",
+                    "text": "1. Preheat the oven to 350°F."
+                },
+                {
+                    "key": "8",
+                    "type": "paragraph",
+                    "text": "2. In a large bowl, cream together the butter and sugar until smooth."
+                },
+                {
+                    "key": "9",
+                    "type": "paragraph",
+                    "text": "3. Add the eggs one at a time, beating well with each addition."
+                }
+            ],
+            "entityMap": {
+                "0": {
+                    "type": "LINK",
+                    "mutability": "MUTABLE",
+                    "data": {
+                        "url": "https://www.example.com"
+                    }
+                }
+            }
+        }
+    }
+]
